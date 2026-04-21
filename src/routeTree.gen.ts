@@ -9,8 +9,26 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SpecificationsRouteImport } from './routes/specifications'
+import { Route as EditionRouteImport } from './routes/edition'
+import { Route as AcquireRouteImport } from './routes/acquire'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SpecificationsRoute = SpecificationsRouteImport.update({
+  id: '/specifications',
+  path: '/specifications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EditionRoute = EditionRouteImport.update({
+  id: '/edition',
+  path: '/edition',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AcquireRoute = AcquireRouteImport.update({
+  id: '/acquire',
+  path: '/acquire',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +37,61 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/acquire': typeof AcquireRoute
+  '/edition': typeof EditionRoute
+  '/specifications': typeof SpecificationsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/acquire': typeof AcquireRoute
+  '/edition': typeof EditionRoute
+  '/specifications': typeof SpecificationsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/acquire': typeof AcquireRoute
+  '/edition': typeof EditionRoute
+  '/specifications': typeof SpecificationsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/acquire' | '/edition' | '/specifications'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/acquire' | '/edition' | '/specifications'
+  id: '__root__' | '/' | '/acquire' | '/edition' | '/specifications'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AcquireRoute: typeof AcquireRoute
+  EditionRoute: typeof EditionRoute
+  SpecificationsRoute: typeof SpecificationsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/specifications': {
+      id: '/specifications'
+      path: '/specifications'
+      fullPath: '/specifications'
+      preLoaderRoute: typeof SpecificationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/edition': {
+      id: '/edition'
+      path: '/edition'
+      fullPath: '/edition'
+      preLoaderRoute: typeof EditionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/acquire': {
+      id: '/acquire'
+      path: '/acquire'
+      fullPath: '/acquire'
+      preLoaderRoute: typeof AcquireRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +104,9 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AcquireRoute: AcquireRoute,
+  EditionRoute: EditionRoute,
+  SpecificationsRoute: SpecificationsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
