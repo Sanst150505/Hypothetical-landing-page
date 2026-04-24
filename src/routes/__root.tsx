@@ -1,4 +1,4 @@
-import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
+import { HeadContent, Link, Outlet, Scripts, createRootRoute } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
 
@@ -13,7 +13,7 @@ function NotFoundComponent() {
           Page not found
         </h2>
         <p className="mt-3 text-sm text-zinc-soft">
-          This URL got lost in the drop. Head back to the launch.
+          This page does not exist. Head back to the KRAZE K1 overview.
         </p>
         <div className="mt-8">
           <Link
@@ -21,7 +21,7 @@ function NotFoundComponent() {
             className="inline-flex items-center gap-3 bg-acid-yellow text-void font-display uppercase tracking-tighter px-8 py-4 hover:-translate-y-1 hover:shadow-[8px_8px_0px_var(--color-hyper-pink)] transition-all duration-300 border-2 border-transparent hover:border-foreground"
           >
             <span>Back to home</span>
-            <span>→</span>
+            <span>{"->"}</span>
           </Link>
         </div>
       </div>
@@ -35,11 +35,11 @@ export const Route = createRootRoute({
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "theme-color", content: "#0a0510" },
-      { title: "KRAZE — India's loudest new smartphone" },
+      { title: "KRAZE K1 - Flagship smartphone showcase" },
       {
         name: "description",
         content:
-          "KRAZE K1. Flagship-grade smartphone built in India, for India. 144Hz, 120W, 200MP. Pre-book Drop 01 for ₹999.",
+          "KRAZE K1 product showcase with launch details, technical specifications, and reservation flow.",
       },
       { name: "author", content: "KRAZE" },
       { property: "og:type", content: "website" },

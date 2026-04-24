@@ -2,58 +2,48 @@ import { Link } from "@tanstack/react-router";
 
 export function SiteFooter() {
   return (
-    <footer className="relative border-t-2 border-void-line px-6 md:px-12 py-16 max-w-[1600px] mx-auto w-full">
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
-        <div className="md:col-span-5 space-y-6">
-          <div className="font-display text-4xl tracking-tighter uppercase text-acid-yellow">
-            KRAZE<span className="text-hyper-pink">.</span>
+    <footer className="mt-8 border-t border-void-line">
+      <div className="content-wrap py-10 md:py-12">
+        <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
+          <div className="space-y-4">
+            <div className="font-display text-2xl text-foreground">
+              KRAZE <span className="text-acid-yellow">K1</span>
+            </div>
+            <p className="max-w-[32rem] text-sm text-zinc-soft leading-7">
+              A cleaner product showcase with structured launch details, readable
+              specifications, and a reservation form that feels aligned and deliberate.
+            </p>
           </div>
-          <p className="font-display text-2xl md:text-3xl text-foreground leading-[1] uppercase max-w-[20ch]">
-            Born loud.
-            <br />
-            Built in India.
-          </p>
-        </div>
-        <div className="md:col-span-3 space-y-4">
-          <div className="eyebrow text-zinc-soft">Device</div>
-          <ul className="space-y-2 text-sm text-foreground/80">
-            <li>
-              <Link to="/edition" className="hover:text-hyper-pink transition-colors">
-                The Drop
+
+          <div className="space-y-4">
+            <div className="eyebrow">Explore</div>
+            <div className="flex flex-col gap-3 text-sm text-zinc-soft">
+              <Link to="/edition" className="hover:text-foreground">
+                Edition
               </Link>
-            </li>
-            <li>
-              <Link to="/specifications" className="hover:text-hyper-pink transition-colors">
-                Specs
+              <Link to="/specifications" className="hover:text-foreground">
+                Specifications
               </Link>
-            </li>
-            <li>
-              <Link to="/acquire" className="hover:text-hyper-pink transition-colors">
-                Pre-book
+              <Link to="/acquire" className="hover:text-foreground">
+                Reserve
               </Link>
-            </li>
-          </ul>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <div className="eyebrow">Launch window</div>
+            <p className="text-sm text-zinc-soft leading-7">
+              Reservations are open now.
+              <br />
+              Shipping begins on 14 May 2026.
+            </p>
+          </div>
         </div>
-        <div className="md:col-span-2 space-y-4">
-          <div className="eyebrow text-zinc-soft">Service</div>
-          <ul className="space-y-2 text-sm text-foreground/80">
-            <li>Warranty</li>
-            <li>Support</li>
-            <li>Stores</li>
-          </ul>
+
+        <div className="mt-10 flex flex-col gap-3 border-t border-void-line pt-5 text-xs text-zinc-soft md:flex-row md:items-center md:justify-between">
+          <span>© {new Date().getFullYear()} KRAZE</span>
+          <span>K1 launch showcase</span>
         </div>
-        <div className="md:col-span-2 space-y-4">
-          <div className="eyebrow text-zinc-soft">Origin</div>
-          <p className="text-sm text-foreground/80 leading-relaxed">
-            Designed in Bengaluru.
-            <br />
-            Built in Noida.
-          </p>
-        </div>
-      </div>
-      <div className="mt-16 pt-6 border-t border-void-line flex flex-col md:flex-row justify-between gap-4 eyebrow text-zinc-soft">
-        <span>© {new Date().getFullYear()} KRAZE Mobility Pvt. Ltd.</span>
-        <span>Drop 01 — Made for India</span>
       </div>
     </footer>
   );

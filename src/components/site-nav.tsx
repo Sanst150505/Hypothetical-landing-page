@@ -2,42 +2,35 @@ import { Link } from "@tanstack/react-router";
 
 export function SiteNav() {
   return (
-    <nav className="relative z-40 flex items-center justify-between p-6 md:px-12 max-w-[1600px] mx-auto w-full">
-      <Link
-        to="/"
-        className="font-display text-3xl tracking-tighter uppercase text-acid-yellow"
-      >
-        KRAZE<span className="text-hyper-pink">.</span>
-      </Link>
-      <div className="hidden md:flex gap-8 text-xs font-bold uppercase tracking-[0.25em]">
+    <nav className="sticky top-0 z-40 border-b border-void-line/80 bg-void/80 backdrop-blur-xl">
+      <div className="content-wrap flex items-center justify-between gap-4 py-4">
         <Link
-          to="/edition"
-          className="text-foreground/80 hover:text-hyper-pink transition-colors"
-          activeProps={{ className: "text-acid-yellow" }}
+          to="/"
+          className="font-display text-[1.45rem] tracking-tight text-foreground whitespace-nowrap"
         >
-          The Drop
+          KRAZE <span className="text-acid-yellow">K1</span>
         </Link>
-        <Link
-          to="/specifications"
-          className="text-foreground/80 hover:text-hyper-pink transition-colors"
-          activeProps={{ className: "text-acid-yellow" }}
-        >
-          Specs
-        </Link>
-        <Link
-          to="/acquire"
-          className="text-foreground/80 hover:text-hyper-pink transition-colors"
-          activeProps={{ className: "text-acid-yellow" }}
-        >
-          Pre-book
+
+        <div className="hidden md:flex items-center gap-6 text-sm text-zinc-soft">
+          <Link to="/edition" className="hover:text-foreground" activeProps={{ className: "text-foreground" }}>
+            Edition
+          </Link>
+          <Link
+            to="/specifications"
+            className="hover:text-foreground"
+            activeProps={{ className: "text-foreground" }}
+          >
+            Specifications
+          </Link>
+          <Link to="/acquire" className="hover:text-foreground" activeProps={{ className: "text-foreground" }}>
+            Reserve
+          </Link>
+        </div>
+
+        <Link to="/acquire" className="cta-secondary !min-h-11 !px-5 text-sm whitespace-nowrap">
+          Reserve now
         </Link>
       </div>
-      <Link
-        to="/acquire"
-        className="font-display text-xs md:text-sm uppercase bg-foreground text-void px-4 py-2 md:px-5 md:py-2 hover:bg-hyper-pink hover:text-foreground transition-colors"
-      >
-        Pre-book ₹999
-      </Link>
     </nav>
   );
 }

@@ -1,20 +1,20 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
+import { SiteNav } from "@/components/site-nav";
 
 export const Route = createFileRoute("/specifications")({
   head: () => ({
     meta: [
-      { title: "Specs — KRAZE K1" },
+      { title: "KRAZE K1 Specifications" },
       {
         name: "description",
         content:
-          "Full technical specifications for the KRAZE K1: Dimensity 9300+, 144Hz AMOLED, 5200mAh, 120W charging, 200MP primary camera, stock Android.",
+          "Full technical specifications for the KRAZE K1, including performance, display, camera, battery, and connectivity.",
       },
-      { property: "og:title", content: "Specs — KRAZE K1" },
+      { property: "og:title", content: "KRAZE K1 Specifications" },
       {
         property: "og:description",
-        content: "Every measurement published. Flagship specs, no fine print.",
+        content: "A complete, readable specification sheet for the KRAZE K1.",
       },
     ],
   }),
@@ -26,62 +26,62 @@ const groups: { title: string; rows: [string, string][] }[] = [
     title: "Performance",
     rows: [
       ["Chipset", "MediaTek Dimensity 9300+ (4nm)"],
-      ["CPU", "1×3.4GHz Cortex-X4 + 3×2.85GHz X4 + 4×2.0GHz A720"],
+      ["CPU", "1x 3.4GHz Cortex-X4 + 3x 2.85GHz X4 + 4x 2.0GHz A720"],
       ["GPU", "Immortalis-G720 MC12"],
       ["RAM", "12GB / 16GB LPDDR5X"],
       ["Storage", "256GB / 512GB UFS 4.0"],
-      ["Cooling", "12,000mm² vapor chamber + graphite stack"],
+      ["Cooling", "12,000mm2 vapor chamber + graphite stack"],
     ],
   },
   {
     title: "Display",
     rows: [
-      ["Panel", "6.73″ LTPO AMOLED"],
-      ["Resolution", "3200 × 1440, 526 ppi"],
-      ["Refresh", "1–144Hz adaptive"],
-      ["Brightness", "4,500 nits peak, 1,800 nits HBM"],
+      ["Panel", "6.73-inch LTPO AMOLED"],
+      ["Resolution", "3200 x 1440, 526ppi"],
+      ["Refresh", "1-144Hz adaptive"],
+      ["Brightness", "4500 nits peak, 1800 nits HBM"],
       ["Protection", "Corning Gorilla Glass Victus 2"],
-      ["Touch sampling", "2,160Hz in-game"],
+      ["Touch sampling", "2160Hz in-game"],
     ],
   },
   {
     title: "Camera",
     rows: [
       ["Primary", "200MP f/1.6 OIS Sony IMX-890"],
-      ["Ultrawide", "50MP f/2.0, 118°"],
-      ["Telephoto", "64MP f/2.4, 3.2× optical, 10× lossless"],
+      ["Ultrawide", "50MP f/2.0, 118 degrees"],
+      ["Telephoto", "64MP f/2.4, 3.2x optical, 10x lossless"],
       ["Front", "32MP f/2.2 autofocus"],
-      ["Video", "8K @ 30fps, 4K HDR @ 60fps, Dolby Vision"],
+      ["Video", "8K at 30fps, 4K HDR at 60fps, Dolby Vision"],
     ],
   },
   {
-    title: "Battery & Charging",
+    title: "Battery and charging",
     rows: [
-      ["Capacity", "5,200 mAh silicon-carbon"],
-      ["Wired", "120W HyperCharge (0–100% in 19 mins)"],
+      ["Capacity", "5200mAh silicon-carbon"],
+      ["Wired", "120W HyperCharge, 0-100% in 19 minutes"],
       ["Wireless", "50W magnetic + 10W reverse"],
       ["In box", "120W GaN charger, braided Type-C cable"],
     ],
   },
   {
-    title: "Build & Audio",
+    title: "Build and audio",
     rows: [
       ["Frame", "Aerospace-grade aluminum"],
       ["Back", "AG-matte Gorilla Glass"],
-      ["Weight", "201 g"],
-      ["Thickness", "8.2 mm"],
-      ["Rating", "IP68 dust & water resistant"],
-      ["Audio", "Stereo speakers tuned by dBs Kolkata, Hi-Res wired"],
+      ["Weight", "201g"],
+      ["Thickness", "8.2mm"],
+      ["Rating", "IP68 dust and water resistance"],
+      ["Audio", "Stereo speakers, Hi-Res wired audio"],
     ],
   },
   {
-    title: "Connectivity & OS",
+    title: "Connectivity and OS",
     rows: [
-      ["Network", "5G SA/NSA, dual VoLTE, all Indian bands"],
-      ["Wi-Fi", "Wi-Fi 7 (BE), tri-band"],
+      ["Network", "5G SA/NSA, dual VoLTE, all major Indian bands"],
+      ["Wi-Fi", "Wi-Fi 7 tri-band"],
       ["Bluetooth", "5.4, LE Audio, Auracast"],
       ["Other", "NFC, UWB, eSIM + physical SIM, IR blaster"],
-      ["OS", "KrazeOS on Android 15 — stock feel, zero bloatware"],
+      ["OS", "KrazeOS on Android 15 with a clean stock feel"],
       ["Updates", "4 years OS, 6 years security"],
     ],
   },
@@ -89,67 +89,50 @@ const groups: { title: string; rows: [string, string][] }[] = [
 
 function SpecificationsPage() {
   return (
-    <div className="bg-void text-foreground min-h-dvh flex flex-col">
-      <div className="pointer-events-none fixed inset-0 z-50 opacity-[0.08] mix-blend-screen noise" />
+    <div className="min-h-dvh bg-void text-foreground">
       <SiteNav />
 
-      <main className="flex-1 px-6 md:px-12 max-w-[1600px] mx-auto w-full">
-        <header className="pt-12 md:pt-16 pb-16 grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
-          <div className="lg:col-span-8">
-            <div className="eyebrow text-acid-yellow mb-8">Specs / K1</div>
-            <h1 className="font-display text-6xl md:text-8xl lg:text-[7rem] leading-[0.88] uppercase tracking-tighter text-balance">
-              Every number.
-              <br />
-              <span className="text-toxic-orange">Published.</span>
-            </h1>
+      <main className="content-wrap pb-20">
+        <header className="page-header">
+          <div className="space-y-5">
+            <div className="chip">Specifications</div>
+            <h1 className="page-title max-w-[10ch]">Everything important, clearly listed.</h1>
           </div>
-          <div className="lg:col-span-4">
-            <p className="text-base text-zinc-soft leading-relaxed max-w-[42ch]">
-              We publish the full spec sheet because we have nothing to hide and nothing
-              to upsell later. The device does exactly what is listed — and a whole lot
-              faster than its price suggests.
-            </p>
-          </div>
+          <p className="lead">
+            This page is structured to be readable first: strong labels, calmer sizing, and
+            enough spacing for the data to breathe.
+          </p>
         </header>
 
-        <section className="border-t-2 border-void-line">
-          {groups.map((group) => (
-            <div
-              key={group.title}
-              className="grid grid-cols-1 md:grid-cols-12 gap-8 py-12 md:py-16 border-b-2 border-void-line"
-            >
-              <div className="md:col-span-3">
-                <div className="eyebrow text-acid-yellow sticky top-8">{group.title}</div>
-              </div>
-              <dl className="md:col-span-9 divide-y divide-void-line">
-                {group.rows.map(([k, v]) => (
-                  <div
-                    key={k}
-                    className="grid grid-cols-1 sm:grid-cols-12 gap-4 py-4 first:pt-0"
-                  >
-                    <dt className="sm:col-span-4 text-sm text-zinc-soft uppercase tracking-widest">
-                      {k}
-                    </dt>
-                    <dd className="sm:col-span-8 font-display text-xl md:text-2xl uppercase tracking-tighter text-foreground">
-                      {v}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
-          ))}
+        <section className="section-block pt-0">
+          <div className="space-y-5">
+            {groups.map((group) => (
+              <section key={group.title} className="surface-card px-5 py-6 md:px-8 md:py-7">
+                <div className="mb-5 border-b border-void-line pb-4">
+                  <div className="eyebrow text-acid-yellow">{group.title}</div>
+                </div>
+                <dl className="divide-y divide-void-line">
+                  {group.rows.map(([key, value]) => (
+                    <div key={key} className="grid gap-2 py-4 md:grid-cols-[220px_1fr] md:gap-6">
+                      <dt className="info-label">{key}</dt>
+                      <dd className="text-base text-foreground leading-7 md:text-[1.05rem]">
+                        {value}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+              </section>
+            ))}
+          </div>
         </section>
 
-        <section className="py-16 md:py-24 text-center">
-          <Link
-            to="/acquire"
-            className="group inline-flex items-center gap-6 bg-acid-yellow text-void uppercase font-display text-xl px-12 py-6 hover:-translate-y-1 hover:shadow-[12px_12px_0px_var(--color-hyper-pink)] transition-all duration-300 border-2 border-transparent hover:border-foreground"
-          >
-            <span>Pre-book · ₹999</span>
-            <span className="group-hover:translate-x-1 transition-transform">→</span>
+        <section className="section-block pt-0">
+          <Link to="/acquire" className="cta-primary">
+            Reserve for Rs 999
           </Link>
         </section>
       </main>
+
       <SiteFooter />
     </div>
   );
