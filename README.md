@@ -12,7 +12,7 @@ The project includes:
 
 ## Live Preview
 
-- Deployed page: [KRAZE K1 Specifications](https://hypothetical-landing-pa-git-17d2fb-sannidhyas-projects-0787943f.vercel.app/specifications)
+- Deployed page: [KRAZE K1 Specifications](https://hypothetical-landing-pa-git-17d2fb-sannidhyas-projects-0787943f.vercel.app/)
 
 ## Tech Stack
 
